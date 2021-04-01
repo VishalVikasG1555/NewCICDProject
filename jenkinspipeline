@@ -1,16 +1,19 @@
 pipeline{
   agent any
+  environment{
+     PATH= "/opt/maven/bin:$PATH"
+  }
   stages{
     stage("Git checkout"){
       steps{
         git branch: 'main', url: 'https://github.com/VishalVikasG1555/NewCICDProject.git'
       }
     stage("Maven Build"){
-       steps{
-          sh "mvn clean package"
-       }
+      steps{
+         sh 'mvn clean package -DskipTests'
+      }
     }
-    }
+   }
   }
 
 }
