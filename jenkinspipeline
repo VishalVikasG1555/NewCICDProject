@@ -5,11 +5,11 @@ pipeline{
   }
   stages{
     stage("Git checkout"){
-      steps{
+      'steps'{
         git branch: 'main', url: 'https://github.com/VishalVikasG1555/NewCICDProject.git'
       }
     stage("Maven Build"){
-      steps{
+      'steps'{
          sh 'mvn clean package -DskipTests'
       }
     }
