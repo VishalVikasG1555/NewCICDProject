@@ -4,12 +4,12 @@ pipeline{
      PATH= "/opt/maven/bin:$PATH"
   }
   stages{
-    stage("Git checkout"){
-      'steps'{
+    stage('Git checkout'){
+      steps{
         git branch: 'main', url: 'https://github.com/VishalVikasG1555/NewCICDProject.git'
       }
-    stage("Maven Build"){
-      'steps'{
+    stage('Maven Build'){
+      steps{
          sh 'mvn clean package -DskipTests'
       }
     }
