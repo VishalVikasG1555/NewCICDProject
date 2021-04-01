@@ -5,6 +5,11 @@ pipeline{
       steps{
         git branch: 'main', url: 'https://github.com/VishalVikasG1555/NewCICDProject.git'
       }
+    stage("Maven Build"){
+       steps{
+          sh "mvn clean package"
+       }
+    }
     }
   }
 
