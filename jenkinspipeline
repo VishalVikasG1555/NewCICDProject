@@ -14,7 +14,7 @@ pipeline
      {
         steps
         {
-           sh '/opt/maven/bin/mvn clean package -DskipTests'
+           sh '/opt/maven/bin/mvn clean package -Dmaven.test.skip=true'
         }
      }
   }
