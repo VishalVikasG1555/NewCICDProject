@@ -17,6 +17,13 @@ pipeline
            sh '/opt/maven/bin/mvn clean package -Dmaven.test.skip=true'
         }
      }
+      stage('running build jar file')
+     {
+        steps
+        {
+           sh 'mvn spring-boot:run'
+        }
+     }
   }
 }
 
