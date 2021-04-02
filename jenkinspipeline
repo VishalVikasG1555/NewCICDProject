@@ -21,7 +21,7 @@ pipeline
      {
         steps
         {
-           sh '/opt/maven/bin/mvn spring-boot:run'
+           sh '/opt/maven/bin/mvn spring-boot:run &'
         }
      }
   }
